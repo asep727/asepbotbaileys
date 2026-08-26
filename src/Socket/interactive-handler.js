@@ -524,8 +524,6 @@ class AsepBotInteractiveHandler {
         return msg;
     }
 }
-// Keep the legacy alias so existing projects do not break after migrating.
 module.exports = {
-    AsepBotInteractiveHandler,
-    badzz88: AsepBotInteractiveHandler
+    AsepBotInteractiveHandler
 };

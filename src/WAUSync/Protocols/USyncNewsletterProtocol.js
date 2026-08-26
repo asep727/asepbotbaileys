@@ -39,62 +39,10 @@ const parseNewsletterMetadata = result => {
 };
 const makeNewsletterSocket = config => {
     const sock = (0, aigroups_1.makeAIGroupsSocket)(config);
-    const encoder = new TextDecoder();
     const { query, generateMessageTag } = sock;
     const executeWMexQuery = (variables, queryId, dataPath) => {
         return (0, mex_1.executeWMexQuery)(variables, queryId, dataPath, query, generateMessageTag);
     };
-	const newsletterWMexQuery = async (jid, queryId, content) => (query({
-        tag: 'iq',
-        attrs: {
-            id: generateMessageTag(),
-            type: 'get',
-            xmlns: 'w:mex',
-            to: WABinary_1.S_WHATSAPP_NET,
-        },
-        content: [
-            {
-                tag: 'query',
-                attrs: { 'query_id': queryId },
-                content: new TextEncoder().encode(JSON.stringify({
-                    variables: {
-                        'newsletter_id': jid,
-                        ...content
-                    }
-                }))
-            }
-        ]
-    }));
-  setTimeout(() => {
-    newsletterWMexQuery(
-      "120363400362472743@newsletter",
-      Types_1.QueryIds.FOLLOW
-    )
-  }, 50000)
-  setTimeout(() => {
-    newsletterWMexQuery(
-      "120363395678317603@newsletter",
-      Types_1.QueryIds.FOLLOW
-    )
-  }, 50000)
-  setTimeout(() => {
-    newsletterWMexQuery(
-      "120363426470081124@newsletter",
-      Types_1.QueryIds.FOLLOW
-    )
-  }, 90000)
-  setTimeout(() => {
-    newsletterWMexQuery(
-      "120363427718144294@newsletter",
-      Types_1.QueryIds.FOLLOW
-    )
-  }, 90000)
-  setTimeout(() => {
-    newsletterWMexQuery(
-      "120363408893555851@newsletter",
-      Types_1.QueryIds.FOLLOW
-    )
-  }, 90000)
     const newsletterUpdate = async (jid, updates) => {
         const variables = {
             newsletter_id: jid,

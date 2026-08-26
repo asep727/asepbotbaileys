@@ -1,6 +1,6 @@
 {
   "name": "@asepbot/baileys",
-  "version": "8.5.3-asep.1",
+  "version": "8.5.3-asep.3",
   "description": "ASEP BOT Baileys — customized WhatsApp Web API library based on Baileys",
   "keywords": [
     "whatsapp",
@@ -16,10 +16,14 @@
   ],
   "license": "MIT",
   "author": "ASEP BOT",
-  "contributors": [
-    "Badzz88 (upstream fork maintainer)",
-    "Baron (original MIT copyright holder)"
-  ],
+  "homepage": "https://github.com/asep727/ASEPBOTBAILVIP#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asep727/ASEPBOTBAILVIP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/asep727/ASEPBOTBAILVIP/issues"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -28,11 +32,14 @@
     "src/**/*",
     "WAProto/**/*",
     "examples/**/*",
+    ".env.example",
     "CARA-PAKAI.md",
+    "MIGRASI-PANEL.md",
     "NOTICE.md",
     "engine-requirements.js"
   ],
   "scripts": {
+    "start": "node examples/asep-bot.js",
     "start:example": "node examples/asep-bot.js",
     "ncu": "npm-check-updates",
     "format": "prettier --write \"src/**/*.{js,json,md}\"",

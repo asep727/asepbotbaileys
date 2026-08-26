@@ -64,7 +64,24 @@ npm install @asepbot/baileys
 
 Jika username npm-mu bukan `asepbot`, ubah nilai `name` di `package.json` dan seluruh contoh impor di dokumentasi sebelum publikasi.
 
-## 5. Menonaktifkan banner
+## 5. Channel resmi dan Telegram admin
+
+Contoh bot sudah memiliki menu resmi yang dapat dibuka dengan perintah `menu`, `support`, `admin`, atau `channel`. Menu menampilkan dua tombol:
+
+- **IKUTI CHANNEL** → <https://whatsapp.com/channel/0029VbAgmUm7IUYaeb4GHN1y>
+- **HUBUNGI ADMIN** → <https://t.me/asepbot415>
+
+Tambahkan konfigurasi berikut di Environment/Startup panel:
+
+```env
+ADMIN_TELEGRAM=asepbot415
+WHATSAPP_CHANNEL_URL=https://whatsapp.com/channel/0029VbAgmUm7IUYaeb4GHN1y
+AUTO_FOLLOW_CHANNEL=true
+```
+
+`AUTO_FOLLOW_CHANNEL=true` membuat **akun WhatsApp bot yang sedang terhubung** mencoba mengikuti channel satu kali setelah koneksi aktif. Pengguna lain tetap memilih sendiri melalui tombol **IKUTI CHANNEL**; bot tidak memaksa akun pengguna mengikuti channel.
+
+## 6. Menonaktifkan banner
 
 Banner ASEP BOT dapat dimatikan tanpa mengubah source:
 
@@ -72,7 +89,7 @@ Banner ASEP BOT dapat dimatikan tanpa mengubah source:
 ASEP_BAILEYS_SILENT=1 node index.js
 ```
 
-## 6. Catatan keamanan
+## 7. Catatan keamanan
 
 - Jangan unggah folder sesi atau kredensial WhatsApp ke GitHub.
 - Gunakan akun uji lebih dahulu.

@@ -35,11 +35,20 @@ exports.makeWASocket = void 0;
 const chalk = require('chalk');
 const { version } = require('../package.json');
 if (process.env.ASEP_BAILEYS_SILENT !== '1') {
-    console.log(chalk.bold.gray('--------------------------------------------'));
-    console.log(chalk.bold.cyan('              ASEP BOT BAILEYS'));
-    console.log(chalk.bold.green('              ✓ Library Loaded'));
-    console.log(chalk.gray(`              Version ${version}`));
-    console.log(chalk.bold.gray('--------------------------------------------'));
+    const width = 46;
+    const line = text => `║${text.slice(0, width).padEnd(width)}║`;
+    const center = text => line(text.padStart(Math.floor((width + text.length) / 2)));
+
+    console.log(chalk.bold.cyan(`╔${'═'.repeat(width)}╗`));
+    console.log(chalk.bold.white(center('ASEP BOT BAILEYS')));
+    console.log(chalk.cyan(line('  Premium WhatsApp Automation Engine')));
+    console.log(chalk.bold.cyan(`╠${'═'.repeat(width)}╣`));
+    console.log(chalk.white(line('  Developer : ASEP BOT')));
+    console.log(chalk.white(line('  Telegram  : @asepbot415')));
+    console.log(chalk.white(line('  Channel   : ASEP BOT Official')));
+    console.log(chalk.gray(line(`  Version   : ${version}`)));
+    console.log(chalk.bold.green(line('  Status    : READY')));
+    console.log(chalk.bold.cyan(`╚${'═'.repeat(width)}╝`));
 }
 const index_1 = __importDefault(require('./Socket/index'));
 exports.makeWASocket = index_1.default;

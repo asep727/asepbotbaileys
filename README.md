@@ -4,15 +4,17 @@ ASEP BOT Baileys is a customized WhatsApp Web library built on [Baileys](https:/
 
 <p align="center">
   <img alt="package" src="https://img.shields.io/badge/package-%40asepbot%2Fbaileys-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
-  <img alt="version" src="https://img.shields.io/badge/version-8.5.3--asep.1-blue?style=for-the-badge">
+  <img alt="version" src="https://img.shields.io/badge/version-8.5.3--asep.3-blue?style=for-the-badge">
 </p>
 
 | | |
 |---|---|
 | 📦 **Package** | `@asepbot/baileys` |
-| 🏷️ **Version** | `8.5.3-asep.1` |
+| 🏷️ **Version** | `8.5.3-asep.3` |
 | 🧩 **Maintainer** | ASEP BOT |
-| 🧱 **Base** | Baileys + upstream fork `@badzz88/baileys` |
+| 🧱 **Engine** | ASEP BOT WhatsApp Automation Engine |
+| 💬 **Telegram Admin** | [@asepbot415](https://t.me/asepbot415) |
+| 📡 **WhatsApp Channel** | [ASEP BOT Official](https://whatsapp.com/channel/0029VbAgmUm7IUYaeb4GHN1y) |
 
 > This is an unofficial community project and is not affiliated with WhatsApp or Meta. Keep the original MIT license and use the library responsibly.
 

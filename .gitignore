@@ -1,0 +1,9 @@
+node_modules/
+session*/
+auth*/
+.env
+.env.*
+!.env.example
+.npmrc
+*.log
+npm-debug.log*

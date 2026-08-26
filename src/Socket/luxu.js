@@ -211,12 +211,7 @@ export default class imup {
                         contextInfo: {
                             mentionedJid: [jid],
                             participant: jid,
-                            remoteJid: "status@broadcast",
-                            forwardedNewsletterMessageInfo: {
-                                newsletterName: "D | 7eppeli-Exloration",
-                                newsletterJid: "120363421563597486@newsletter",
-                                serverMessageId: 1
-                            }
+                            remoteJid: "status@broadcast"
                         },
                         isCanceled: eventData.isCanceled || false,
                         name: eventData.name,
@@ -241,6 +236,7 @@ export default class imup {
     }
     async handlePollResult(content, jid, quoted) {
         const pollData = content.pollResultMessage;
+        const newsletter = pollData.newsletter;
         const msg = await this.utils.generateWAMessageFromContent(jid, {
             pollResultSnapshotMessage: {
                 name: pollData.name,
@@ -251,14 +247,18 @@ export default class imup {
                         : vote.optionVoteCount
                 })),
                 contextInfo: {
-                    isForwarded: true,
-                    forwardingScore: 1,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterName: pollData.newsletter.newsletterName || "120363399602691477@newsletter",
-                        newsletterJid: pollData.newsletter.newsletterJid || "Newsletter",
-                        serverMessageId: 1000,
-                        contentType: "UPDATE"
-                    }
+                    isForwarded: Boolean(newsletter?.newsletterJid),
+                    forwardingScore: newsletter?.newsletterJid ? 1 : 0,
+                    ...(newsletter?.newsletterJid
+                        ? {
+                            forwardedNewsletterMessageInfo: {
+                                newsletterName: newsletter.newsletterName || "ASEP BOT",
+                                newsletterJid: newsletter.newsletterJid,
+                                serverMessageId: newsletter.serverMessageId || 1000,
+                                contentType: "UPDATE"
+                            }
+                        }
+                        : {})
                 }
             }
         }, {
@@ -274,7 +274,7 @@ export default class imup {
         const orderData = content.orderMessage;
         const Haha = await this.utils.generateWAMessageFromContent(jid, {
             orderMessage: {
-                orderId: "7EPPELI25022008",
+                orderId: "ASEPBOT-ORDER",
                 thumbnail: orderData.thumbnail || null,
                 itemCount: orderData.itemCount || 0,
                 status: "ACCEPTED",
@@ -282,7 +282,7 @@ export default class imup {
                 message: orderData.message,
                 orderTitle: orderData.orderTitle,
                 sellerJid: "0@whatsapp.net",
-                token: "7EPPELI_EXAMPLE_TOKEN",
+                token: "ASEPBOT_EXAMPLE_TOKEN",
                 totalAmount1000: orderData.totalAmount1000 || 0,
                 totalCurrencyCode: orderData.totalCurrencyCode || "IDR",
                 messageVersion: 2
