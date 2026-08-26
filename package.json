@@ -1,6 +1,6 @@
 {
-  "name": "@asepbot/baileys",
-  "version": "8.5.3-asep.3",
+  "name": "asepbotbaileys",
+  "version": "8.5.3-asep.4",
   "description": "ASEP BOT Baileys — customized WhatsApp Web API library based on Baileys",
   "keywords": [
     "whatsapp",
@@ -16,13 +16,13 @@
   ],
   "license": "MIT",
   "author": "ASEP BOT",
-  "homepage": "https://github.com/asep727/ASEPBOTBAILVIP#readme",
+  "homepage": "https://github.com/asep727/asepbotbaileys",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asep727/ASEPBOTBAILVIP.git"
+    "url": "git+https://github.com/asep727/asepbotbaileys.git"
   },
   "bugs": {
-    "url": "https://github.com/asep727/ASEPBOTBAILVIP/issues"
+    "url": "https://github.com/asep727/asepbotbaileys/issues"
   },
   "publishConfig": {
     "access": "public"
@@ -53,16 +53,16 @@
     "@hapi/boom": "^10.0.1",
     "async-mutex": "^0.5.0",
     "cache-manager": "^7.2.8",
+    "chalk": "^4.1.2",
+    "jimp": "^1.6.0",
     "libphonenumber-js": "^1.13.3",
     "lru-cache": "^11.5.0",
     "music-metadata": "^11.12.3",
     "p-queue": "^9.3.0",
     "pino": "^10.3.1",
     "protobufjs": "^7.6.1",
-    "ws": "^8.21.0",
     "whatsapp-rust-bridge": "0.5.4",
-    "jimp": "^1.6.0",
-    "chalk": "^4.1.2"
+    "ws": "^8.21.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -89,9 +89,9 @@
     "tsx": "^4.22.3"
   },
   "peerDependencies": {
+    "@img/sharp-wasm32": "^0.35.1",
     "audio-decode": "^2.1.3",
     "link-preview-js": "^3.2.0",
-    "@img/sharp-wasm32": "^0.35.1",
     "sharp": "^0.32.5"
   },
   "peerDependenciesMeta": {
